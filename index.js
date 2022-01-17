@@ -5,40 +5,98 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-const questions = [
+const manQuestions = () => {
+    inquirer.prompt([
     {
         type: 'input',
         name: 'name',
-        message: 'Name:'
+        message: 'Name of Manager:'
     },
     {
         type: 'input',
         name: 'id',
-        message: 'ID:'
+        message: 'Managers ID:'
     },
     {
         type: 'input',
         name: 'email',
-        message: 'Email:'
+        message: 'Managers email:'
     },
     {
         type: 'input',
-        name: 'title',
-        message: 'Project Title:'
+        name: 'offNumber',
+        message: 'Managers Office Number:'
     },
-]
+    {
+        type: 'list',
+        name: 'addTeammate',
+        message: 'Want to add another team member?',
+        choices: ['Manager', 'Engineer', 'Intern', 'No']
+    }
+])
 
-function addIntern() {
-    inquirer.prompt(questions)
+
+}
+
+const addEngineer = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Name of Engineer:'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Engineers ID:'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Engineers email:'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Engineers GitHub:'
+        },
+        {
+            type: 'list',
+            name: 'addTeammate',
+            message: 'Want to add another team member?',
+            choices: ['Manager', 'Engineer', 'Intern', 'No']
+        }
+    ])
 }
 
 
-function addEngineer() {
-    inquirer.prompt(questions)
+const addIntern = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Name of Intern:'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Interns ID:'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Interns email:'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Interns School:'
+        },
+        {
+            type: 'list',
+            name: 'addTeammate',
+            message: 'Want to add another team member?',
+            choices: ['Manager', 'Engineer', 'Intern', 'No']
+        }
+    ])
 }
-
-
-function addManager() {
-    inquirer.prompt(questions)
-}
-
