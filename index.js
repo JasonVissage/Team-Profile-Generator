@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-const manQuestions = () => {
+const addManager = () => {
     inquirer.prompt([
     {
         type: 'input',
