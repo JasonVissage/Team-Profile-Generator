@@ -9,11 +9,11 @@ function addCards(employees) {
     const employeeArray = employees[i];
     switch(employeeArray.getRole()) {
       case 'Manager':
-        const manager = new Manager(employeeArray.id, employeeArray.name, employeeArray.email, employeeArray.officeNumber);
+        const manager = new Manager(employeeArray.id, employeeArray.name, employeeArray.email, employeeArray.offNumber);
         cards.push(addManagerCard(manager));
         break;
       case 'Engineer':
-        const engineer = new Engineer(employeeArray.id, employeeArray.name, employeeArray.email, employeeArray.github);
+        const engineer = new Engineer(employeeArray.id, employeeArray.name, employeeArray.email, employeeArray.githubuser);
         cards.push(addEngineerCard(engineer));
         break;
       case 'Intern':
@@ -27,16 +27,16 @@ function addCards(employees) {
 
 let addManagerCard = (Manager) => {
   return `
-  <div class="card m-1 shadow" style="width: 18rem">
+  <div class="card m-2 shadow" style="width: 20rem">
     <div class='card-header'>
       <h3 class="card-title">${Manager.getName()}</h3>
-      <h6 class="card-text"><i class="fa fa-coffee"></i> ${Manager.getRole()}</h6>
+      <h6 class="card-text"><i class="fas fa-award"></i> ${Manager.getRole()}</h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${Manager.getId()}</li>
         <li class="list-group-item">Email: ${Manager.getEmail()}</li>
-        <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()}</li>
+        <li class="list-group-item">Office Number: ${Manager.getOffNumber()}</li>
       </ul>
     </div>
   </div>
@@ -45,16 +45,16 @@ let addManagerCard = (Manager) => {
 
 let addEngineerCard = (Engineer) => {
   return `
-  <div class="card m-1 shadow" style="width: 18rem">
+  <div class="card m-2 shadow" style="width: 20rem">
     <div class='card-header'>
       <h3 class="card-title">${Engineer.getName()}</h3>
-      <h6 class="card-text"><i class="fa fa-laptop"></i> ${Engineer.getRole()}</h6>
+      <h6 class="card-text"><i class="fa fa-user-cog"></i> ${Engineer.getRole()}</h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${Engineer.getId()}</li>
         <li class="list-group-item">Email: ${Engineer.getEmail()}</li>
-        <li class="list-group-item">GitHub: ${Engineer.getGithub()}</li>
+        <li class="list-group-item">GitHub: ${Engineer.getGithubUser()}</li>
       </ul>
     </div>
   </div>
@@ -63,10 +63,10 @@ let addEngineerCard = (Engineer) => {
 
 let addInternCard = (Intern) => {
   return `
-  <div class="card m-1 shadow" style="width: 18rem">
+  <div class="card m-2 shadow" style="width: 20rem">
     <div class='card-header'>
       <h3 class="card-title">${Intern.getName()}</h3>
-      <h6 class="card-text"><i class="fa fa-graduation-cap"></i> ${Intern.getRole()}</h6>
+      <h6 class="card-text"><i class="fa fa-chalkboard-teacher"></i> ${Intern.getRole()}</h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
@@ -88,18 +88,18 @@ return `
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/9fb727ea26.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <title>My Team</title>
+  <title class="">My Team</title>
 </head>
 <body>
-<div class="jumbotron jumbotron-fluid bg-warning">
+<div class="jumbotron jumbotron-fluid bg-dark">
   <div class="container">
-    <h1 class="display-4 text-center">My Team</h1>
+    <h1 class="display-6 text-center">My Team</h1>
   </div>
 </div>
 <div class="d-flex flex-row flex-wrap justify-content-center">
-${addCards(team)}
+${addCards(employees)}
 </div>
 </body>
 </html>

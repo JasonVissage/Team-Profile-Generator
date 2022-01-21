@@ -77,7 +77,7 @@ const addEngineer = () => {
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'githubuser',
             message: 'Engineers GitHub:'
         },
         {
@@ -88,8 +88,8 @@ const addEngineer = () => {
         }
     ])
     .then((engineerResponse) => {
-        const engineer = new Engineer(engineerResponse.id, engineerResponse.name, engineerResponse.email, engineerResponse.github)
-        team.push(engineer)
+        const engineer = new Engineer(engineerResponse.id, engineerResponse.name, engineerResponse.email, engineerResponse.githubuser)
+        employees.push(engineer)
         switch(engineerResponse.addTeammate) {
             case 'Engineer':
                 addEngineer();
@@ -124,7 +124,7 @@ const addIntern = () => {
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'school',
             message: 'Interns School:'
         },
         {
@@ -136,7 +136,7 @@ const addIntern = () => {
     ])
     .then((internResponse) => {
         const intern = new Intern(internResponse.id, internResponse.name, internResponse.email, internResponse.school)
-        team.push(intern)
+        employees.push(intern)
         switch(internResponse.addTeammate) {
             case 'Engineer':
                 addEngineer();
