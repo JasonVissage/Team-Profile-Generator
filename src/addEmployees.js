@@ -30,13 +30,13 @@ let addManagerCard = (Manager) => {
   return `
   <div class="card m-2 shadow" style="width: 20rem">
     <div class='card-header'>
-      <h3 class="card-title">${Manager.getName()}</h3>
-      <h6 class="card-text"><i class="fas fa-award"></i> </h6>
+      <h3 class="card-title">${Manager.getId()}</h3>
+      <h6 class="card-text"><i class="fas fa-award"></i> ${Manager.getRole()}</h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${Manager.getId()}</li>
-        <li class="list-group-item">Email: ${Manager.getEmail()}</li>
+        <li class="list-group-item">ID: ${Manager.getEmail()}</li>
+        <li class="list-group-item">Email: ${Manager.getName()}</li>
         <li class="list-group-item">Office Number: ${Manager.getOffNumber()}</li>
       </ul>
     </div>
