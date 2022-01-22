@@ -40,7 +40,7 @@ const addManager = () => {
 ])
 
 .then((managerResponse) => {
-    const manager = new Manager(managerResponse.name, managerResponse.email, managerResponse.id, managerResponse.offNumber)
+    const manager = new Manager(managerResponse.id, managerResponse.name, managerResponse.email, managerResponse.offNumber)
     employees.push(manager)
     switch(managerResponse.addTeammate) {
         case 'Engineer':

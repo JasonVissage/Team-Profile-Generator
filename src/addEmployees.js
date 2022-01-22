@@ -26,11 +26,12 @@ function addCards(employees) {
 }
 
 let addManagerCard = (Manager) => {
+  console.log(Manager.getName())
   return `
   <div class="card m-2 shadow" style="width: 20rem">
     <div class='card-header'>
       <h3 class="card-title">${Manager.getName()}</h3>
-      <h6 class="card-text"><i class="fas fa-award"></i> ${Manager.getRole()}</h6>
+      <h6 class="card-text"><i class="fas fa-award"></i> </h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
